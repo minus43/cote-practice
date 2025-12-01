@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
-public class SayMiddle {
+public class Boj1655 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

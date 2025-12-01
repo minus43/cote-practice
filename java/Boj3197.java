@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class SwanLake {
+public class Boj3197 {
 
     static int R, C;
     static char[][] map;
