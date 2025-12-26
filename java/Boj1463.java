@@ -1,26 +1,24 @@
 import java.io.*;
 
 public class Boj1463 {
-    static int[] num = new int[1000001];
+    static int[] dp = new int[1000001];
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
+        dp[0] = 0;
+        dp[1] = 0;
+        dp[2] = 1;
+        dp[3] = 1;
         int n = Integer.parseInt(br.readLine());
-        while (n != 1) {
-            n = op(n);
+        for (int i = 2; i < n + 1; i++) {
+            dp[i] = dp[i - 1] + 1;
+            if (i % 2 == 0) {
+                dp[i] = Math.min(dp[i], dp[i / 2] + 1);
+            }
+            if (i % 3 == 0) {
+                dp[i] = Math.min(dp[i], dp[i / 3] + 1);
+            }
         }
-        
-    }
-
-    public static int op(int n) {
-        count++;
-        if (n % 3 == 0) {
-            return n / 3;
-        } else if (n % 2 == 0) {
-            return n / 2;
-        } else {
-            return n - 1;
-        }
+        System.out.println(dp[n]);
     }
 }
